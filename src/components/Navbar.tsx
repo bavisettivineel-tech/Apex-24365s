@@ -28,10 +28,10 @@ export function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-navy-deep/90 backdrop-blur-xl border-b border-gold/30 py-3" : "bg-transparent py-5"}`}>
+    <header role="banner" aria-label="Apex Solutions Navigation — Insurance Advisor Kakinada" className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-navy-deep/90 backdrop-blur-xl border-b border-gold/30 py-3" : "bg-transparent py-5"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <button onClick={() => go("home")} className="flex items-center gap-3">
-          <img src={logo} alt="Apex Solutions" className="h-10 w-10 rounded-full object-cover ring-1 ring-gold/40" />
+        <button onClick={() => go("home")} className="flex items-center gap-3" aria-label="Go to top — Apex Solutions Home">
+          <img src={logo} alt="Apex Solutions — Trusted Insurance Advisor Kakinada, Andhra Pradesh" className="h-10 w-10 rounded-full object-cover ring-1 ring-gold/40" />
           <div className="leading-tight text-left">
             <div className="font-brand text-lg tracking-widest text-gold">APEX</div>
             <div className="text-[10px] uppercase tracking-[0.3em] text-silver">Solutions</div>

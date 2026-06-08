@@ -24,14 +24,14 @@ const wa = (msg: string) => WA_BASE + encodeURIComponent(msg);
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-hero">
+    <section id="home" aria-label="Hero — Apex Solutions Insurance Kakinada" className="relative min-h-screen overflow-hidden bg-hero">
       <ParticleNetwork />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.15),transparent_60%)]" />
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-5 pt-28 pb-16 text-center sm:px-6 sm:pt-32 sm:pb-20">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
           className="mb-6 inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 text-[10px] uppercase tracking-widest text-silver sm:mb-8 sm:px-4 sm:py-2 sm:text-xs whitespace-nowrap">
           <Shield size={12} className="text-gold" />
-          Trusted Partner — Kakinada
+          Trusted Insurance Partner — Kakinada, Andhra Pradesh
         </motion.div>
         <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl">
           {["Securing Lives.", "Empowering Futures.", "Building Trust."].map((line, i) => (
@@ -44,7 +44,7 @@ function Hero() {
         </h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
           className="mt-6 max-w-3xl text-sm text-silver sm:mt-8 sm:text-base md:text-lg">
-          Apex Solutions brings you premium health and life insurance plans from <span className="text-gold">TATA AIA</span>, <span className="text-gold">TATA AIG</span>, and <span className="text-gold">Star Health</span> — protecting every family in Andhra Pradesh and beyond.
+          Apex Solutions brings you premium health and life insurance plans from <span className="text-gold" itemProp="brand">TATA AIA Life Insurance</span>, <span className="text-gold" itemProp="brand">TATA AIG General Insurance</span>, and <span className="text-gold" itemProp="brand">Star Health Insurance</span> — protecting every family in Andhra Pradesh, Kakinada, Rajahmundry, Vijayawada and beyond.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.05 }}
           className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:gap-4">
@@ -84,21 +84,22 @@ function About() {
     { icon: Gem, title: "Our Values", text: "Transparency, Trust, Customer-First Approach, and Lifelong Support." },
   ];
   return (
-    <section id="about" className="relative overflow-hidden bg-navy-deep py-16 sm:py-24 md:py-28">
+    <section id="about" aria-label="About Apex Solutions — Insurance Advisor Kakinada" className="relative overflow-hidden bg-navy-deep py-16 sm:py-24 md:py-28" itemScope itemType="https://schema.org/Organization">
       <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_45%,rgba(201,168,76,0.08)_50%,transparent_55%)]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <motion.div {...fadeUp}>
             <div className="text-xs uppercase tracking-[0.4em] text-gold">About Us</div>
-            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl md:text-5xl">
-              Who <span className="text-gold-gradient">We</span> Are
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl md:text-5xl" itemProp="name">
+              Who <span className="text-gold-gradient">We</span> Are — Apex Solutions, Kakinada
             </h2>
-            <p className="mt-6 text-silver leading-relaxed">
-              Apex Solutions is a premier insurance services company headquartered in Kakinada, Andhra Pradesh.
-              We are dedicated to simplifying insurance for everyday families — offering trusted plans from
-              India's most reputable insurance brands including TATA AIA Life Insurance, TATA AIG, and
-              Star Health Insurance. We don't just sell insurance — we build lifelong relationships built
-              on trust, transparency, and genuine care.
+            <p className="mt-6 text-silver leading-relaxed" itemProp="description">
+              Apex Solutions is a premier insurance advisory firm headquartered in Kakinada, Andhra Pradesh.
+              We simplify insurance for everyday families across East Godavari, Rajahmundry, Vijayawada, and Amalapuram
+              — offering trusted IRDAI-approved plans from India's most reputable brands including
+              <strong> TATA AIA Life Insurance</strong>, <strong>TATA AIG General &amp; Health Insurance</strong>, and
+              <strong> Star Health Insurance</strong>. We don't just sell insurance — we build lifelong relationships
+              built on trust, transparency, and genuine care.
             </p>
             <div className="mt-8 grid gap-4">
               {cards.map((c) => (
@@ -142,7 +143,7 @@ function Founder() {
     { icon: Users, text: "500+ Families Protected" },
   ];
   return (
-    <section className="relative overflow-hidden py-16 sm:py-24 md:py-28" style={{ background: "linear-gradient(135deg, oklch(0.20 0.10 20) 0%, oklch(0.14 0.04 260) 100%)" }}>
+    <section aria-label="Founder — N.M. Lakshmi Prasad, CEO Apex Solutions" className="relative overflow-hidden py-16 sm:py-24 md:py-28" style={{ background: "linear-gradient(135deg, oklch(0.20 0.10 20) 0%, oklch(0.14 0.04 260) 100%)" }} itemScope itemType="https://schema.org/Person">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(201,168,76,0.12),transparent_50%)]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div {...fadeUp} className="text-center">
@@ -156,13 +157,13 @@ function Founder() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gold/10 blur-2xl" />
               <div className="gold-pulse-ring relative aspect-[3/4] w-64 overflow-hidden rounded-3xl sm:w-72 md:w-80">
-                <img src={founder} alt="N.M. Lakshmi Prasad — Founder & CEO" className="h-full w-full object-cover" />
+                <img src={founder} alt="N.M. Lakshmi Prasad — Founder & CEO of Apex Solutions, Kakinada, Andhra Pradesh" className="h-full w-full object-cover" itemProp="image" />
               </div>
             </div>
           </motion.div>
           <motion.div {...fadeUp}>
-            <div className="font-brand text-2xl tracking-wide text-gold sm:text-3xl md:text-4xl">N.M. Lakshmi Prasad</div>
-            <div className="mt-2 text-sm uppercase tracking-widest text-silver">Founder &amp; CEO, Apex Solutions</div>
+            <div className="font-brand text-2xl tracking-wide text-gold sm:text-3xl md:text-4xl" itemProp="name">N.M. Lakshmi Prasad</div>
+            <div className="mt-2 text-sm uppercase tracking-widest text-silver" itemProp="jobTitle">Founder &amp; CEO, Apex Solutions — Kakinada</div>
             <p className="mt-6 text-silver leading-relaxed">
               N.M. Lakshmi Prasad is a visionary entrepreneur and the driving force behind Apex Solutions.
               With over 3 years of dedicated experience in the insurance industry, he has built a reputation
@@ -205,13 +206,13 @@ function Plans() {
     },
   ];
   return (
-    <section id="plans" className="relative overflow-hidden bg-navy-deep py-16 sm:py-24 md:py-28">
+    <section id="plans" aria-label="Insurance Plans — TATA AIA Life, TATA AIG & Star Health" className="relative overflow-hidden bg-navy-deep py-16 sm:py-24 md:py-28">
       <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(ellipse_at_top,rgba(201,168,76,0.18),transparent_60%)]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.4em] text-gold">Our Insurance Plans</div>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl md:text-5xl">
-            Trusted Brands. <span className="text-gold-gradient">One Trusted Advisor.</span>
+            Trusted Insurance Brands. <span className="text-gold-gradient">One Trusted Advisor in Kakinada.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-silver">
             We proudly offer insurance plans from India's most reputable IRDAI-approved companies.
@@ -263,7 +264,7 @@ function WhyUs() {
     { icon: Trophy, title: "Award-Winning Service", text: "Recognized with 5+ industry awards for excellence." },
   ];
   return (
-    <section className="relative bg-navy py-16 sm:py-24 md:py-28">
+    <section aria-label="Why Choose Apex Solutions Insurance — Kakinada" className="relative bg-navy py-16 sm:py-24 md:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.4em] text-gold">Why Choose Us</div>
@@ -324,7 +325,7 @@ function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="relative overflow-hidden bg-navy-deep py-16 sm:py-24 md:py-28">
+    <section id="gallery" aria-label="Awards & Gallery — Apex Solutions Achievements" className="relative overflow-hidden bg-navy-deep py-16 sm:py-24 md:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,168,76,0.08),transparent_60%)]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div {...fadeUp} className="text-center">
@@ -361,7 +362,7 @@ function Gallery() {
             {[...images, ...images, ...images, ...images].map((img, i) => (
               <div key={i} className="glass-strong shrink-0 w-[280px] sm:w-[320px] md:w-[360px] rounded-2xl p-3 transition-all hover:-translate-y-2 hover:shadow-gold group">
                 <div className="relative w-full aspect-[4/5] sm:aspect-square rounded-xl overflow-hidden">
-                  <img src={img.src} alt={img.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={img.src} alt={`Apex Solutions — ${img.title}, Kakinada Insurance Award`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                     <div className="font-display font-semibold text-gold tracking-wide">{img.title}</div>
                   </div>
@@ -390,17 +391,17 @@ function Careers() {
       benefits: ["Lead & mentor your own team", "High leadership commissions", "Business building incentives", "Recognition & award opportunities", "Long-term passive income"] },
   ];
   return (
-    <section id="careers" className="relative overflow-hidden py-16 sm:py-24 md:py-28" style={{ background: "linear-gradient(135deg, oklch(0.22 0.10 20) 0%, oklch(0.14 0.04 260) 100%)" }}>
+    <section id="careers" aria-label="Insurance Agent & Leader Jobs Kakinada — Join Apex Solutions" className="relative overflow-hidden py-16 sm:py-24 md:py-28" style={{ background: "linear-gradient(135deg, oklch(0.22 0.10 20) 0%, oklch(0.14 0.04 260) 100%)" }}>
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(201,168,76,0.06)_50%,transparent_52%)] bg-[length:40px_40px]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.4em] text-gold">Join Our Team</div>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl md:text-5xl">
-            Build Your Career With <span className="text-gold-gradient">Apex Solutions</span>
+            Build Your Insurance Career With <span className="text-gold-gradient">Apex Solutions — Kakinada</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-silver">
-            We are actively hiring passionate Agents and dynamic Leaders for TATA AIA Life Insurance.
-            Only serious career seekers need apply.
+            We are actively hiring passionate <strong>Insurance Agents</strong> and dynamic <strong>Team Leaders</strong> for TATA AIA Life Insurance in Kakinada, Rajahmundry, Amalapuram and across Andhra Pradesh.
+            Earn ₹50,000–₹1,00,000+ per month. Only serious career seekers need apply.
           </p>
         </motion.div>
         <div className="mt-14 grid gap-8 md:grid-cols-2">
@@ -474,7 +475,7 @@ function Testimonials() {
   const [idx, setIdx] = useState(0);
   const next = () => setIdx((i: number) => (i + 1) % items.length);
   return (
-    <section id="testimonials" className="bg-navy-deep py-16 sm:py-24 md:py-28">
+    <section id="testimonials" aria-label="Client Testimonials — Apex Solutions Reviews Kakinada" className="bg-navy-deep py-16 sm:py-24 md:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.4em] text-gold">Testimonials</div>
@@ -512,7 +513,7 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="bg-[oklch(0.96_0.01_85)] py-16 sm:py-24 md:py-28 text-navy-deep">
+    <section aria-label="Insurance FAQ — Frequently Asked Questions Apex Solutions" className="bg-[oklch(0.96_0.01_85)] py-16 sm:py-24 md:py-28 text-navy-deep">
       <div className="mx-auto max-w-3xl px-5 sm:px-6">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.4em] text-gold-deep">FAQ</div>
@@ -558,7 +559,7 @@ function Contact() {
     { icon: Facebook, label: "Facebook", value: "Apex Solutions on Facebook", href: "https://www.facebook.com/share/1B83rrGM1G/" },
   ];
   return (
-    <section id="contact" className="relative bg-navy-deep py-16 sm:py-24 md:py-28">
+    <section id="contact" aria-label="Contact Apex Solutions — Insurance Advisor Kakinada Andhra Pradesh" className="relative bg-navy-deep py-16 sm:py-24 md:py-28" itemScope itemType="https://schema.org/ContactPage">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(201,168,76,0.12),transparent_60%)]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div {...fadeUp} className="text-center">
@@ -638,7 +639,7 @@ function Contact() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="border-t border-gold/20 bg-[oklch(0.10_0.03_260)] py-14">
+    <footer className="border-t border-gold/20 bg-[oklch(0.10_0.03_260)] py-14" aria-label="Apex Solutions Footer — Insurance Services Kakinada">
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -674,7 +675,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-gold/20 pt-6 text-center text-xs text-silver">
-          © {new Date().getFullYear()} Apex Solutions. All Rights Reserved. · Powered by Apex Solutions
+          © {new Date().getFullYear()} Apex Solutions, Kakinada, Andhra Pradesh. All Rights Reserved. · IRDAI Approved Insurance Advisor · Trusted by 500+ Families
         </div>
       </div>
     </footer>

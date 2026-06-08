@@ -1,4 +1,40 @@
+# Apex Solutions — https://apex24365s.in/
+# robots.txt — Updated for maximum SEO coverage
+
 User-agent: *
 Allow: /
 
+# Block irrelevant system paths
+Disallow: /api/
+Disallow: /_build/
+Disallow: /__nitro/
+
+# Google-specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Allow social crawlers (OG previews)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Sitemap
 Sitemap: https://apex24365s.in/sitemap.xml
